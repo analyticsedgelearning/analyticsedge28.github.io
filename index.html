@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics Edge Learning – Applied AI & Training</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header {
+      background: #f4f4f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      border-bottom: 2px solid #4a90e2;
+    }
+    header img { height: 60px; }
+    header h1 { font-size: 1.5em; color: #333; }
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    h2 { color: #4a90e2; margin-bottom: 20px; }
+    .features, .projects {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .feature, .project {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 20px;
+      background: #fff;
+    }
+    .feature i { font-size: 30px; color: #4a90e2; margin-bottom: 10px; display: block; }
+    .contact-form label { display: block; margin-top: 15px; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;
+    }
+    .contact-form button {
+      margin-top: 20px;
+      background: #4a90e2; color: white; border: none; padding: 10px 20px;
+      cursor: pointer; border-radius: 4px;
+    }
+    footer {
+      background: #222; color: white; text-align: center; padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/logo3_2.png" alt="Analytics Edge Learning Logo">
+    <h1>Analytics Edge Learning – Applied AI & Training</h1>
+  </header>
+
+  <section>
+    <h2>What We Do</h2>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-brain"></i>
+        <h3>AI/ML Consulting</h3>
+        <p>Design and deployment of AI systems including classification, NLP, anomaly detection and forecasting solutions.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-language"></i>
+        <h3>NLP Engineering</h3>
+        <p>Development of short-text classifiers, sentiment analysis, and lexicon-enhanced transformers for real-world text data.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>Training & Mentorship</h3>
+        <p>Academic and corporate workshops on Machine Learning, Python, and Cloud-based AI development practices.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h4><a href="https://github.com/saugatabose28/Customer-Churn-Prediction-BigData" target="_blank">Customer Churn Prediction</a></h4>
+        <p>XGBoost + SHAP explainability for telecom dataset churn classification (GitHub).</p>
+      </div>
+      <div class="project">
+        <h4><a href="https://github.com/saugatabose28/Security-Essential-Practices" target="_blank">Security Log Analysis</a></h4>
+        <p>Regex-based log parsing with cryptographic encoding and hash auditing.</p>
+      </div>
+      <div class="project">
+        <h4><a href="https://github.com/saugatabose28/BigData-COVID19-Analysis" target="_blank">Big Data COVID-19 Analysis</a></h4>
+        <p>Distributed Spark MLlib pipeline for large-scale health dataset processing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>About Us</h2>
+    <p>Founded by experienced AI researcher Dr. Saugata Bose, Analytics Edge Learning provides innovative solutions at the intersection of AI research and real-world IT consulting. We are driven by the belief that technology should be both intelligent and inclusive, offering services that empower individuals, businesses, and communities.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <form class="contact-form" name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Analytics Edge Learning | Sydney, Australia
+  </footer>
+</body>
+</html>
