@@ -156,8 +156,8 @@
       email: form.email.value.trim(),
       message: form.message.value.trim()
     };
-
-    fetch("https://script.google.com/macros/s/AKfycbyJ4ZplPKzyM4vrxjpP9S6viwDDjvFuuQ_tAYBqZ5JPxxv_oJbgkN6QEeT_Z0wVtbV0/exec, {
+	
+	fetch("https://script.google.com/macros/s/AKfycbyJ4ZplPKzyM4vrxjpP9S6viwDDjvFuuQ_tAYBqZ5JPxxv_oJbgkN6QEeT_Z0wVtbV0/exec", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
