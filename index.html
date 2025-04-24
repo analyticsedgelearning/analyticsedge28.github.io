@@ -57,6 +57,14 @@
       background: #222; color: white; text-align: center; padding: 20px;
     }
   </style>
+    <!-- Global site tag (gtag.js) - Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-YYYYYYYYYY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-YYYYYYYYYY');
+  </script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZP7W93LS4X"></script>
@@ -117,22 +125,62 @@
     <p>Founded by experienced AI researcher Dr. <a href="https://saugatabose28.github.io/" target="_blank">Saugata Bose</a>, Analytics Edge Learning provides innovative solutions at the intersection of AI research and real-world IT consulting. We are driven by the belief that technology should be both intelligent and inclusive, offering services that empower individuals, businesses, and communities.</p>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <form class="contact-form" name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+<section id="contact" style="padding: 30px; max-width: 700px; margin: auto;">
+  <h2 style="text-align:center;">Contact Us</h2>
+  <form id="contactForm" style="display:flex; flex-direction:column; gap:15px;">
+    <input type="text" name="name" placeholder="Your Name" required 
+           style="padding:10px; font-size:16px; border:1px solid #ccc; border-radius:4px;">
+    <input type="email" name="email" placeholder="Your Email" required 
+           style="padding:10px; font-size:16px; border:1px solid #ccc; border-radius:4px;">
+    <textarea name="message" placeholder="Your Message" rows="5" required 
+              style="padding:10px; font-size:16px; border:1px solid #ccc; border-radius:4px;"></textarea>
+    <button type="submit" style="background-color:#005792; color:white; padding:10px; font-size:16px; border:none; border-radius:4px;">
+      Send Message
+    </button>
+  </form>
+  <p id="form-status" style="text-align:center; margin-top:10px; color:green;"></p>
+</section>
 
   <footer>
     &copy; 2025 Analytics Edge Learning | Sydney, Australia
   </footer>
+  <script>
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const data = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      message: form.message.value.trim()
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbyJ4ZplPKzyM4vrxjpP9S6viwDDjvFuuQ_tAYBqZ5JPxxv_oJbgkN6QEeT_Z0wVtbV0/exec", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => response.json())
+    .then(json => {
+      if (json.result === "success") {
+        status.textContent = "Thank you! Your message has been received.";
+        form.reset();
+      } else {
+        status.textContent = "Oops! Something went wrong.";
+        status.style.color = "red";
+      }
+    })
+    .catch(error => {
+      console.error("Form submission error:", error);
+      status.textContent = "Network error. Please try again later.";
+      status.style.color = "red";
+    });
+  });
+</script>
+
 </body>
 </html>
